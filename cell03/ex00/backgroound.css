@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	transition: background-color 0.5s ease-in-out;
+	height: 100vh;
+	width: 100vw;
+	padding: 20px;
+}
+
+.piggy-pink {
+	font-size: 24px;
+	background-color: rgb(99, 151, 86);
+	font-weight: bold;
+}
+
+#clickMeBtn {
+	background-color: rgb(197, 139, 118);
+	color: rgb(74, 67, 67);
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 3px;
+	border: 1px solid rgb(74, 67, 67);
+}

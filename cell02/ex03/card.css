@@ -1,0 +1,91 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Space Grotesk', sans-serif;
+	color: #5c5555;
+}
+
+.profile {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	height: 560px;
+	font-family: 'Space Grotesk', sans-serif;
+	margin: 10px auto;
+	text-align: center;
+	padding: 5px;
+	border-radius: 5px;
+	color: rgb(100, 94, 86);
+	background-color: #d6d0d0;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.profile-photo{
+	background-image: url(./logan-weaver-lgnwvr-Isle-8YpbIQ-unsplash.jpg);
+	background-repeat:no-repeat;
+	background-position: center center;
+	height: 280px;
+}
+
+h1 {
+	text-transform: uppercase;
+	margin: 30px 20px 20px;
+}
+
+.profile-contact {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(121, 105, 105);
+	color: rgb(49, 45, 45);
+	text-align: center;
+}
+
+.p {
+	margin-bottom: 20px;
+	color:#2e2424
+}
+
+.profile-contact a {
+	display: block;
+	text-decoration: none;
+	color:#2e2424;
+	padding: 12px;
+	text-transform: uppercase;
+	font-size: 20px;
+	border-radius: 0 0 5px 5px;
+}
+
+.profile-contact a:hover {
+	display: block;
+	width: 100%;
+	color:aquamarine;
+	background: #504949;
+	padding: 12px;
+	text-transform: uppercase;
+	font-size: 20px;
+	border-radius: 0 0 5px 5px;
+	transition: fill 0.3s ease; 
+}
+
+.socials {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 15px auto;
+	margin-top: 20px;
+}
+
+.socials img {
+	width: 24px;
+	height: 24px;
+	color: aliceblue;
+}

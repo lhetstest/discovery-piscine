@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			width: 100vw;
+			background-color: antiquewhite;
+		}
+    </style>
+</head>
+<body>
+	<div class="container">
+		<div id="balloon" onclick="growBalloon()" onmouseover="shrinkBalloon()" onmouseout="resetBalloonSize()"></div>
+	</div>
+    <script>
+        var balloon = document.getElementById("balloon");
+        var currentSize = 200;
+        var currentColorIndex = 0;
+        var colors = ["red", "green", "blue"];
+
+        function growBalloon() {
+            currentSize += 10;
+            if (currentSize > 420) {
+                // If the size is greater than 420, reset to the original size
+                currentSize = 200;
+            }
+            updateBalloon();
+        }
+
+        function shrinkBalloon() {
+            currentSize -= 5;
+            if (currentSize < 200) {
+                // Ensure the size doesn't go below 200
+                currentSize = 200;
+            }
+            updateBalloon();
+        }
+
+        function resetBalloonSize() {
+            // Reset the size and color when the mouse leaves the balloon
+            currentSize = 200;
+            currentColorIndex = 0;
+            updateBalloon();
+        }
+
+        function updateBalloon() {
+            balloon.style.width = currentSize + "px";
+            balloon.style.height = currentSize + "px";
+            balloon.style.backgroundColor = colors[currentColorIndex];
+
+            // Update color index for the next click
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }
+    </script>
+</body>
+</html>

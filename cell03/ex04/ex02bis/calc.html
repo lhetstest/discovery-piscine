@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <label for="leftOperand">Left Operand:</label>
+    <input type="text" id="leftOperand" placeholder="Enter a number" />
+
+    <label for="operator">Operator:</label>
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+
+    <label for="rightOperand">Right Operand:</label>
+    <input type="text" id="rightOperand" placeholder="Enter a number" />
+
+    <input type="button" value="Try me!" id="calculateBtn" />
+
+    <script>
+        $(document).ready(function () {
+            // Execute the calculation when the "Try me!" button is clicked
+            $("#calculateBtn").on("click", function () {
+                var leftOperand = parseInt($("#leftOperand").val());
+                var operator = $("#operator").val();
+                var rightOperand = parseInt($("#rightOperand").val());
+
+                // Check for valid input
+                if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+                    alert('Error :(');
+                    return;
+                }
+
+                // Perform calculation based on the selected operator
+                var result;
+                switch (operator) {
+                    case '+':
+                        result = leftOperand + rightOperand;
+                        break;
+                    case '-':
+                        result = leftOperand - rightOperand;
+                        break;
+                    case '*':
+                        result = leftOperand * rightOperand;
+                        break;
+                    case '/':
+                        if (rightOperand === 0) {
+                            alert("It's over 9000!");
+                            return;
+                        }
+                        result = leftOperand / rightOperand;
+                        break;
+                    case '%':
+                        if (rightOperand === 0) {
+                            alert("It's over 9000!");
+                            return;
+                        }
+                        result = leftOperand % rightOperand;
+                        break;
+                    default:
+                        alert('Invalid operator');
+                        return;
+                }
+
+                // Display result in alert and console
+                alert('Result: ' + result);
+                console.log('Result:', result);
+            });
+
+            // Display alert every 30 seconds
+            setInterval(function () {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+
+</body>
+</html>

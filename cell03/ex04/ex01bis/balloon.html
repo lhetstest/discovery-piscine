@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Balloon with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script>
+        $(document).ready(function () {
+            var initialSize = 200;
+            var currentSize = initialSize;
+            var currentColorIndex = 0;
+            var colors = ["red", "green", "blue"];
+
+            $("#balloon").on("click", function () {
+                // Increase size by 10px
+                currentSize += 10;
+
+                // If size is greater than 420px, reset to initial size
+                if (currentSize > 420) {
+                    currentSize = initialSize;
+                }
+
+                // Change color based on the order of the colors array
+                $(this).css({
+                    "width": currentSize + "px",
+                    "height": currentSize + "px",
+                    "background-color": colors[currentColorIndex]
+                });
+
+                // Update color index for the next click
+                currentColorIndex = (currentColorIndex + 1) % colors.length;
+            });
+
+            $("#balloon").on({
+                mouseenter: function () {
+                    // Shrink size by 5px when mouse enters
+                    currentSize -= 5;
+
+                    // Ensure size doesn't go below initial size
+                    if (currentSize < initialSize) {
+                        currentSize = initialSize;
+                    }
+
+                    // Change color in reverse order
+                    currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length;
+
+                    $(this).css({
+                        "width": currentSize + "px",
+                        "height": currentSize + "px",
+                        "background-color": colors[currentColorIndex]
+                    });
+                },
+                mouseleave: function () {
+                    // Reset size to initial size when mouse leaves
+                    currentSize = initialSize;
+
+                    // Change color back to the original order
+                    currentColorIndex = (currentColorIndex + 1) % colors.length;
+
+                    $(this).css({
+                        "width": currentSize + "px",
+                        "height": currentSize + "px",
+                        "background-color": colors[currentColorIndex]
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

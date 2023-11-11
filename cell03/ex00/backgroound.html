@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Style On Click</title>
+	<link rel="stylesheet" href="./backgroound.css">
+</head>
+<body>
+	<div class="container">
+		<button id="clickMeBtn" onclick="changeColor()">Click Me!</button>
+	</div>
+    <script>
+        // Function to apply the special style
+        function changeColor() {
+            // Get the body element
+            const bodyElement = document.querySelector('.container');
+
+            // Add the 'special-style' class to the body
+            bodyElement.classList.toggle('piggy-pink');
+        }
+    </script>
+
+</body>
+</html>

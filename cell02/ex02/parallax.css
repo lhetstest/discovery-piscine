@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.box1, .box2, .box3, .box4, .box5 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-attachment:fixed;
+}
+
+p {
+	text-transform: uppercase;
+	color: antiquewhite;
+	font-family: sans-serif;
+	font-size: 30px;
+}
+
+.box1 {
+	background-image: url(./jason-leung-CNEdEpM0Lmg-unsplash.jpg);
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+.box2 {
+	background-color: rgb(49, 60, 68);
+}
+.box3 {
+	background-image: url(./daniel-r-RD8zce_ONYY-unsplash.jpg);
+}
+.box4 {
+	background-color: black;
+}
+.box5 {
+	background-image: url(./melina-kiefer-ndmGLbyWtxU-unsplash.jpg);
+}
+
+.
