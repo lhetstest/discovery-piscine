@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		footer {
+			min-height: 100%;
+			display: grid;
+			grid-template-rows: 1fr auto;
+		}
+		.footer {
+			grid-row-start: 2;
+			grid-row-end: 3;
+			background-color: #e0ca7f;
+			color: rgb(80, 21, 134);
+			height: 20vh;
+			padding: 20px;
+		}
+		.footer-content {
+			display: flex;
+			max-width: 800px;
+			margin: 10px auto;
+			flex-direction: column;
+		}
+		.footer-authors{
+			display: flex;
+			justify-content: space-between;
+		}
+		.footer-authors img{
+			width: 22px;
+			height: 22px;
+		}
+	</style>
+</head>
+<body>
+	<footer>
+		<div class="footer">
+			<div class="footer-content">
+				<h2 class="footer-name">Authors</h2>
+				<div class="footer-authors">
+					<div class="author"><h3>yrul</h3>
+						<a href="github.com"><img src="./github.svg" alt=""></a>
+					</div>
+					<div class="author"><h3>yrul</h3>
+						<a href="github.com"><img src="./github.svg" alt=""></a>
+					</div>
+					<div class="author"><h3>yrul</h3>
+						<a href="github.com"><img src="./github.svg" alt=""></a>
+					</div>
+					<div class="author"><h3>yrul</h3>
+						<a href="github.com"><img src="./github.svg" alt=""></a>
+					</div>
+				</div>
+				<p>&copy; All rights reserved</p> 
+			</div>
+			
+		</div>
+	</footer>
+</body>
+</html>
